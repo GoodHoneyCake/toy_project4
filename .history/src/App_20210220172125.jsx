@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
 import VideoList from "./components/video_list/video_list";
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
     };
 
     fetch(
-      "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyDlRY8MTesdvHw_lMP8v4G_NKGaLAm8UBU",
+      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=나훈아&type=video&key=AIzaSyDlRY8MTesdvHw_lMP8v4G_NKGaLAm8UBU",
       requestOptions
     )
       .then((response) => response.json())

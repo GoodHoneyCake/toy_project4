@@ -12,7 +12,7 @@ export default function App() {
     };
 
     fetch(
-      "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyDlRY8MTesdvHw_lMP8v4G_NKGaLAm8UBU",
+      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2500&q=말왕&type=video&key=AIzaSyDlRY8MTesdvHw_lMP8v4G_NKGaLAm8UBU",
       requestOptions
     )
       .then((response) => response.json())
