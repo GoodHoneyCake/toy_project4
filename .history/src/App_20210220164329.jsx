@@ -21,7 +21,9 @@ export default function App() {
   }, []);
   return (
     <SafeAreaView>
-      <VideoList videos={videos} />
+      <ScrollView>
+        <VideoList videos={videos} />
+      </ScrollView>
     </SafeAreaView>
   );
 }

@@ -27,12 +27,7 @@ const VideoItem = ({ video: { snippet } }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    display: "flex",
-    alignItems: "center",
-    paddingTop: 10,
-    paddingBottom: 10,
-  },
+  container: { display: "flex", alignItems: "center" },
   videoContainer: { width: 300 },
   video: {
     width: 300,

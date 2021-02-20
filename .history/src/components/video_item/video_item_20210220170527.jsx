@@ -27,21 +27,15 @@ const VideoItem = ({ video: { snippet } }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    display: "flex",
-    alignItems: "center",
-    paddingTop: 10,
-    paddingBottom: 10,
-  },
-  videoContainer: { width: 300 },
+  container: { display: "flex", alignItems: "center" },
+  videoContainer: { width: 100 },
   video: {
-    width: 300,
-    height: 200,
+    width: 100,
+    height: 100,
     resizeMode: "contain",
-    borderRadius: 5,
   },
-  title: { textAlign: "center", fontWeight: "bold" },
-  channel: { textAlign: "center", fontSize: 12, color: "gray" },
+  title: {},
+  channel: { fontSize: 12 },
 });
 
 export default VideoItem;

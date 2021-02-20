@@ -1,5 +1,6 @@
+import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import VideoList from "./components/video_list/video_list";
 
 export default function App() {
@@ -20,8 +21,17 @@ export default function App() {
       .catch((error) => console.log("error", error));
   }, []);
   return (
-    <SafeAreaView>
+    <View style={styles.container}>
       <VideoList videos={videos} />
-    </SafeAreaView>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

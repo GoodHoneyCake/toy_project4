@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, SafeAreaView, StyleSheet } from "react-native";
+import { FlatList, SafeAreaView } from "react-native";
 import VideoItem from "../video_item/video_item";
 
 const VideoList = (props) => {
