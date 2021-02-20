@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import VideoList from "./components/video_list/video_list";
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
       .then((response) => response.json())
       .then((result) => setVideos(result.items))
       .catch((error) => console.log("error", error));
-  }, []);
+  }, [videos]);
   return (
     <View style={styles.container}>
       <VideoList videos={videos} />
