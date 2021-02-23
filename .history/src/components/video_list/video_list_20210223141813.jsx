@@ -20,19 +20,22 @@ const VideoList = ({ videos, onVideoClick, selectedVideo }) => {
   );
 
   return (
-    <SafeAreaView>
-      <TouchableOpacity>
-        <Link to={`/`}>
-          <Text>홈으로</Text>
-        </Link>
-      </TouchableOpacity>
-      <Button title="선택 초기화" onPress={() => onVideoClick(null)} />
-      <FlatList
-        data={videos}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </SafeAreaView>
+    onVideoClick(null),
+    (
+      <SafeAreaView>
+        <TouchableOpacity>
+          <Link to={`/`}>
+            <Text>홈으로</Text>
+          </Link>
+        </TouchableOpacity>
+        {/* <Button title="선택 초기화" onPress={() => onVideoClick(null)} /> */}
+        <FlatList
+          data={videos}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+      </SafeAreaView>
+    )
   );
 };
 

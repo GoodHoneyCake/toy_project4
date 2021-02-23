@@ -1,9 +1,16 @@
 import React, { useState, useCallback } from "react";
-import { Button, View, Alert, Text } from "react-native";
+import {
+  Button,
+  View,
+  Alert,
+  TouchableOpacity,
+  Text,
+  ScrollView,
+} from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { Link } from "react-router-native";
 
-const VideoDetail = ({ video }) => {
+const VideoDetail = ({ video, onVideoClick }) => {
   const [playing, setPlaying] = useState(false);
 
   const onStateChange = useCallback((state) => {
