@@ -14,6 +14,10 @@ export default function App() {
     setSelectedVideo(video);
   };
 
+  const nullVideo = () => {
+    setSelectedVideo(null);
+  };
+
   useEffect(() => {
     const requestOptions = {
       method: "GET",

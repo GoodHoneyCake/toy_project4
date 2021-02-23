@@ -15,27 +15,22 @@ const VideoItem = ({
   onVideoClick,
   selectedVideo,
 }) => {
-  const type = selectedVideo ? (
-    <Link to={`/detail`}>
-      <Image
-        style={styles.video}
-        source={{ uri: snippet.thumbnails.medium.url }}
-      />
-    </Link>
-  ) : (
-    <Image
-      style={styles.video}
-      source={{ uri: snippet.thumbnails.medium.url }}
-    />
-  );
-
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
         style={styles.videoContainer}
         onPress={() => onVideoClick(video)}
       >
-        {type}
+        {selectedVideo ? (
+          <Link to={`/detail`}>
+            <Image
+              style={styles.video}
+              source={{ uri: snippet.thumbnails.medium.url }}
+            />
+          </Link>
+        ) : (
+          selectedVideo
+        )}
         <View>
           <Text style={styles.title}>{snippet.title}</Text>
           <Text style={styles.channel}>{snippet.channelTitle}</Text>

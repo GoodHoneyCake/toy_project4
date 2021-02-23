@@ -32,12 +32,17 @@ const VideoDetail = ({ video }) => {
         videoId={`${video.id}`}
         onChangeState={onStateChange}
       />
-      <Button title={playing ? "pause" : "play"} onPress={togglePlaying} />
       <TouchableOpacity>
         <Link to={`/videos`}>
           <Text>뒤로가기</Text>
         </Link>
+        <Button title={playing ? "pause" : "play"} onPress={togglePlaying} />
       </TouchableOpacity>
+      <ScrollView>
+        <Text>{video.snippet.title}</Text>
+        <Text>{video.snippet.channelTitle}</Text>
+        <Text>{video.snippet.description}</Text>
+      </ScrollView>
     </View>
   );
 };

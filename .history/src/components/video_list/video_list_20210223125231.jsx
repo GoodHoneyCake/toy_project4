@@ -9,13 +9,9 @@ import {
 import { Link } from "react-router-native";
 import VideoItem from "../video_item/video_item";
 
-const VideoList = ({ videos, onVideoClick, selectedVideo }) => {
+const VideoList = ({ videos, onVideoClick }) => {
   const renderItem = ({ item }) => (
-    <VideoItem
-      video={item}
-      onVideoClick={onVideoClick}
-      selectedVideo={selectedVideo}
-    />
+    <VideoItem video={item} onVideoClick={onVideoClick} />
   );
 
   return (
@@ -25,12 +21,13 @@ const VideoList = ({ videos, onVideoClick, selectedVideo }) => {
           <Text>홈으로</Text>
         </Link>
       </TouchableOpacity>
-
-      <FlatList
-        data={videos}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
+      <Link to={`/detail`}>
+        <FlatList
+          data={videos}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+      </Link>
     </SafeAreaView>
   );
 };

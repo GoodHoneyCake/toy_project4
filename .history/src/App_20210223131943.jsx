@@ -14,6 +14,10 @@ export default function App() {
     setSelectedVideo(video);
   };
 
+  const nullVideo = () => {
+    selectedVideo = null;
+  };
+
   useEffect(() => {
     const requestOptions = {
       method: "GET",
@@ -48,7 +52,9 @@ export default function App() {
         {selectedVideo && (
           <Route
             path="/detail"
-            render={() => <VideoDetail video={selectedVideo} />}
+            render={() => (
+              <VideoDetail video={selectedVideo} nullVideo={nullVideo} />
+            )}
           />
         )}
       </NativeRouter>

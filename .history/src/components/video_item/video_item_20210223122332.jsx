@@ -9,33 +9,19 @@ import {
 } from "react-native";
 import { Link } from "react-router-native";
 
-const VideoItem = ({
-  video,
-  video: { snippet },
-  onVideoClick,
-  selectedVideo,
-}) => {
-  const type = selectedVideo ? (
-    <Link to={`/detail`}>
-      <Image
-        style={styles.video}
-        source={{ uri: snippet.thumbnails.medium.url }}
-      />
-    </Link>
-  ) : (
-    <Image
-      style={styles.video}
-      source={{ uri: snippet.thumbnails.medium.url }}
-    />
-  );
-
+const VideoItem = ({ video, video: { snippet }, onVideoClick, history }) => {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
         style={styles.videoContainer}
-        onPress={() => onVideoClick(video)}
+        onPress={(() => onVideoClick(video), )}
       >
-        {type}
+        <Link to={`/detail`}>
+          <Image
+            style={styles.video}
+            source={{ uri: snippet.thumbnails.medium.url }}
+          />
+        </Link>
         <View>
           <Text style={styles.title}>{snippet.title}</Text>
           <Text style={styles.channel}>{snippet.channelTitle}</Text>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView } from "react-native";
-import { NativeRouter, Route } from "react-router-native";
+import { NativeRouter, Route, withRouter } from "react-router-native";
 import ListView from "./components/list_view/list_view";
 import TopBar from "./components/topbar/topbar";
 import VideoDetail from "./components/video_detail/video_detail";
@@ -38,11 +38,7 @@ export default function App() {
         <Route
           path="/videos"
           render={() => (
-            <VideoList
-              videos={videos}
-              onVideoClick={selectVideo}
-              selectedVideo={selectedVideo}
-            />
+            <VideoList videos={videos} onVideoClick={selectVideo} />
           )}
         />
         {selectedVideo && (

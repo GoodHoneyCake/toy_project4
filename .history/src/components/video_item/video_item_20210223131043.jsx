@@ -35,7 +35,12 @@ const VideoItem = ({
         style={styles.videoContainer}
         onPress={() => onVideoClick(video)}
       >
-        {type}
+        <Link to={`/detail`}>
+          <Image
+            style={styles.video}
+            source={{ uri: snippet.thumbnails.medium.url }}
+          />
+        </Link>
         <View>
           <Text style={styles.title}>{snippet.title}</Text>
           <Text style={styles.channel}>{snippet.channelTitle}</Text>

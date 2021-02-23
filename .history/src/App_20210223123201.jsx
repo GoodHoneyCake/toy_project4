@@ -38,11 +38,7 @@ export default function App() {
         <Route
           path="/videos"
           render={() => (
-            <VideoList
-              videos={videos}
-              onVideoClick={selectVideo}
-              selectedVideo={selectedVideo}
-            />
+            <VideoList videos={videos} onVideoClick={selectVideo} />
           )}
         />
         {selectedVideo && (

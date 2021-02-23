@@ -9,13 +9,9 @@ import {
 import { Link } from "react-router-native";
 import VideoItem from "../video_item/video_item";
 
-const VideoList = ({ videos, onVideoClick, selectedVideo }) => {
+const VideoList = ({ videos, onVideoClick }) => {
   const renderItem = ({ item }) => (
-    <VideoItem
-      video={item}
-      onVideoClick={onVideoClick}
-      selectedVideo={selectedVideo}
-    />
+    <VideoItem video={item} onVideoClick={onVideoClick} />
   );
 
   return (

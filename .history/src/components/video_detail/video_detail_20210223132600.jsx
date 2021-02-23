@@ -1,12 +1,5 @@
 import React, { useState, useCallback } from "react";
-import {
-  Button,
-  View,
-  Alert,
-  TouchableOpacity,
-  Text,
-  ScrollView,
-} from "react-native";
+import { Button, View, Alert, TouchableOpacity, Text } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { Link } from "react-router-native";
 
@@ -32,12 +25,15 @@ const VideoDetail = ({ video }) => {
         videoId={`${video.id}`}
         onChangeState={onStateChange}
       />
-      <Button title={playing ? "pause" : "play"} onPress={togglePlaying} />
       <TouchableOpacity>
         <Link to={`/videos`}>
           <Text>뒤로가기</Text>
         </Link>
       </TouchableOpacity>
+      <Text>{video.snippet.title}</Text>
+      <Text>{video.snippet.channelTitle}</Text>
+      <Text>{video.snippet.description}</Text>
+      <Button title={playing ? "pause" : "play"} onPress={togglePlaying} />
     </View>
   );
 };

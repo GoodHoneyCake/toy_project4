@@ -48,7 +48,9 @@ export default function App() {
         {selectedVideo && (
           <Route
             path="/detail"
-            render={() => <VideoDetail video={selectedVideo} />}
+            render={() => (
+              <VideoDetail video={selectedVideo} onVideoClick={selectVideo} />
+            )}
           />
         )}
       </NativeRouter>

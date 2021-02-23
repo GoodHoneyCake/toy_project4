@@ -1,12 +1,5 @@
 import React, { useState, useCallback } from "react";
-import {
-  Button,
-  View,
-  Alert,
-  TouchableOpacity,
-  Text,
-  ScrollView,
-} from "react-native";
+import { Button, View, Alert, TouchableOpacity, Text } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { Link } from "react-router-native";
 

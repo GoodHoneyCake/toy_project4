@@ -1,12 +1,5 @@
-import React, { useState, useCallback } from "react";
-import {
-  Button,
-  View,
-  Alert,
-  TouchableOpacity,
-  Text,
-  ScrollView,
-} from "react-native";
+import React, { useState, useCallback, useRef } from "react";
+import { Button, View, Alert, TouchableOpacity, Text } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { Link } from "react-router-native";
 
@@ -34,8 +27,8 @@ const VideoDetail = ({ video }) => {
       />
       <Button title={playing ? "pause" : "play"} onPress={togglePlaying} />
       <TouchableOpacity>
-        <Link to={`/videos`}>
-          <Text>뒤로가기</Text>
+        <Link to={`/`}>
+          <Text>홈으로</Text>
         </Link>
       </TouchableOpacity>
     </View>
@@ -43,3 +36,15 @@ const VideoDetail = ({ video }) => {
 };
 
 export default VideoDetail;
+
+{
+  /* <iframe
+  id="ytplayer"
+  type="text/html"
+  width="720"
+  height="405"
+  src="https://www.youtube.com/embed/M7lc1UVf-VE"
+  frameborder="0"
+  allowfullscreen
+></iframe>; */
+}
