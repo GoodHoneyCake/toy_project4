@@ -29,9 +29,6 @@ const VideoDetail = ({ video }) => {
       <Link to={`/`}>
         <Text>홈으로</Text>
       </Link>
-      <Link to={`/videos`}>
-        <Text>뒤로가기</Text>
-      </Link>
     </View>
   );
 };

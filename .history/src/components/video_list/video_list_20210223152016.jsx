@@ -26,6 +26,7 @@ const VideoList = ({ videos, onVideoClick, selectedVideo }) => {
           <Text>홈으로</Text>
         </Link>
       </TouchableOpacity>
+      <Button title="선택 초기화" onPress={() => onVideoClick(null)} />
       <FlatList
         data={videos}
         renderItem={renderItem}

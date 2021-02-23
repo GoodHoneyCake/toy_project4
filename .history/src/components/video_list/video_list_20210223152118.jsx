@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   SafeAreaView,
   FlatList,
@@ -26,11 +26,14 @@ const VideoList = ({ videos, onVideoClick, selectedVideo }) => {
           <Text>홈으로</Text>
         </Link>
       </TouchableOpacity>
-      <FlatList
-        data={videos}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
+      <Button title="선택 초기화" onPress={() => onVideoClick(null)} />
+      {useEffect(
+        <FlatList
+          data={videos}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+      )}
     </SafeAreaView>
   );
 };
