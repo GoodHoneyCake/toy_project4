@@ -1,0 +1,38 @@
+import React, { useState, useCallback } from "react";
+import { Button, View, Alert, Text } from "react-native";
+import YoutubePlayer from "react-native-youtube-iframe";
+import { Link } from "react-router-native";
+
+const VideoDetail = ({ video, match, history, onVideoClick }) => {
+  const [playing, setPlaying] = useState(false);
+
+  const onStateChange = useCallback((state) => {
+    if (state === "ended") {
+      setPlaying(false);
+      Alert.alert("video has finished playing!");
+    }
+  }, []);
+
+  const togglePlaying = useCallback(() => {
+    setPlaying((prev) => !prev);
+  }, []);
+
+  const handleBack = () => {
+    history.goBack();
+  };
+  const id = match.params.id;
+  return (
+    <View>
+      <YoutubePlayer
+        height={300}
+        play={playing}
+        videoId={`${video.id}`}
+        onChangeState={onStateChange}
+      />
+      <Button title={playing ? "pause" : "play"} onPress={togglePlaying} />
+      <Button onPress={handleBack} title="Back" />
+    </View>
+  );
+};
+
+export default VideoDetail;
