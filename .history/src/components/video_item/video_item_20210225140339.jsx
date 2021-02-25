@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  Button,
 } from "react-native";
 import { Link } from "react-router-native";
 const deviceWidth = Dimensions.get("window").width;
@@ -18,10 +19,7 @@ const VideoItem = ({
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity
-        style={styles.videoContainer}
-        onPress={() => onVideoClick(video)}
-      >
+      <TouchableOpacity style={styles.videoContainer}>
         {!selectedVideo ? (
           <Image
             style={styles.video}

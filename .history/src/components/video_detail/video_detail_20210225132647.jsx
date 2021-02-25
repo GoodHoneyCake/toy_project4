@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { Button, View, Alert } from "react-native";
+import { Button, View, Alert, Text } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { useHistory } from "react-router-native";
 
@@ -28,12 +28,14 @@ const VideoDetail = ({ video, onVideoClick }) => {
         onChangeState={onStateChange}
       />
       <Button title={playing ? "Pause" : "Play"} onPress={togglePlaying} />
+
       <Button
         color="green"
         title="Go Back"
         onPress={() => {
           onVideoClick(null);
           history.push(`/videos`);
+          alert("Video Choice Init Button Click Please");
         }}
       />
     </View>

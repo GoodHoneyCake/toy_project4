@@ -7,6 +7,10 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  Button,
+  TouchableHighlight,
+  TouchableHighlightComponent,
+  TouchableOpacityComponent,
 } from "react-native";
 import { Link } from "react-router-native";
 const deviceWidth = Dimensions.get("window").width;

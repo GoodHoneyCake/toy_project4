@@ -46,12 +46,14 @@ export default function App() {
             />
           )}
         />
-        <Route
-          path="/detail"
-          render={() => (
-            <VideoDetail video={selectedVideo} onVideoClick={selectVideo} />
-          )}
-        />
+        {selectedVideo && (
+          <Route
+            path="/detail"
+            render={() => (
+              <VideoDetail video={selectedVideo} onVideoClick={selectVideo} />
+            )}
+          />
+        )}
       </NativeRouter>
     </SafeAreaView>
   );

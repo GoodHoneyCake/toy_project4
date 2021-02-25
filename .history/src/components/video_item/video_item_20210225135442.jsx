@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  Button,
 } from "react-native";
 import { Link } from "react-router-native";
 const deviceWidth = Dimensions.get("window").width;
@@ -23,10 +24,12 @@ const VideoItem = ({
         onPress={() => onVideoClick(video)}
       >
         {!selectedVideo ? (
-          <Image
-            style={styles.video}
-            source={{ uri: snippet.thumbnails.medium.url }}
-          />
+          <Link to={`/detail`}>
+            <Image
+              style={styles.video}
+              source={{ uri: snippet.thumbnails.medium.url }}
+            />
+          </Link>
         ) : (
           <Link to={`/detail`}>
             <Image

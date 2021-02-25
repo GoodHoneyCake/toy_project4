@@ -1,5 +1,12 @@
 import React from "react";
-import { SafeAreaView, FlatList, Button } from "react-native";
+import {
+  SafeAreaView,
+  FlatList,
+  TouchableOpacity,
+  Text,
+  Button,
+  Alert,
+} from "react-native";
 import { useHistory } from "react-router-native";
 import VideoItem from "../video_item/video_item";
 
@@ -23,6 +30,7 @@ const VideoList = ({ videos, onVideoClick, selectedVideo }) => {
           history.push("/");
         }}
       />
+
       <FlatList
         data={videos}
         renderItem={renderItem}

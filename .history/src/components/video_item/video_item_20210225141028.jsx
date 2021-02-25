@@ -27,14 +27,14 @@ const VideoItem = ({
             style={styles.video}
             source={{ uri: snippet.thumbnails.medium.url }}
           />
-        ) : (
-          <Link to={`/detail`}>
-            <Image
-              style={styles.video}
-              source={{ uri: snippet.thumbnails.medium.url }}
-            />
-          </Link>
-        )}
+        ) : 
+          {(<Link to={`/detail`}>
+          <Image
+            style={styles.video}
+            source={{ uri: snippet.thumbnails.medium.url }}
+          />
+        </Link>)}
+        }
       </TouchableOpacity>
       <View style={styles.videoContainer}>
         <Text style={styles.title}>{snippet.title}</Text>

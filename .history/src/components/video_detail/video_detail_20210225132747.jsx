@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { Button, View, Alert } from "react-native";
+import { Button, View, Alert, Text } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { useHistory } from "react-router-native";
 

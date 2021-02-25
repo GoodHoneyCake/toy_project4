@@ -36,6 +36,14 @@ export default function App() {
         <ScrollView>
           <Route path="/" exact render={() => <ListView />} />
         </ScrollView>
+        {selectedVideo && (
+          <Route
+            path="/detail"
+            render={() => (
+              <VideoDetail video={selectedVideo} onVideoClick={selectVideo} />
+            )}
+          />
+        )}
         <Route
           path="/videos"
           render={() => (
@@ -44,12 +52,6 @@ export default function App() {
               onVideoClick={selectVideo}
               selectedVideo={selectedVideo}
             />
-          )}
-        />
-        <Route
-          path="/detail"
-          render={() => (
-            <VideoDetail video={selectedVideo} onVideoClick={selectVideo} />
           )}
         />
       </NativeRouter>

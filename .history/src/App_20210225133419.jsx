@@ -52,6 +52,7 @@ export default function App() {
             <VideoDetail video={selectedVideo} onVideoClick={selectVideo} />
           )}
         />
+        }
       </NativeRouter>
     </SafeAreaView>
   );

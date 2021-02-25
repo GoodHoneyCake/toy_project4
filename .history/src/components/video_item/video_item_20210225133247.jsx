@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  Button,
 } from "react-native";
 import { Link } from "react-router-native";
 const deviceWidth = Dimensions.get("window").width;
@@ -24,7 +25,7 @@ const VideoItem = ({
       >
         {!selectedVideo ? (
           <Image
-            style={styles.video}
+            style={styles.videoNoSelect}
             source={{ uri: snippet.thumbnails.medium.url }}
           />
         ) : (
@@ -52,6 +53,12 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   videoContainer: { width: deviceWidth },
+  videoNoSelect: {
+    alignSelf: "center",
+    width: deviceWidth / 1.1,
+    height: 300,
+    resizeMode: "contain",
+  },
   video: {
     width: deviceWidth,
     height: 300,
